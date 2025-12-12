@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>VELOCITY ARENA | Apresentação Executiva</title>
+    <title>NEOVELOX | Apresentação Executiva</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,31 @@
 </head>
 <body>
     <!-- Auth Guard (executa primeiro) -->
-    <script src="js/auth-guard.js"></script>
+    <script>
+        (function() {
+            const storageKey = 'neovelox_auth';
+            const loginPage = 'index.html';
+            
+            function isAuthenticated() {
+                const session = sessionStorage.getItem(storageKey);
+                if (!session) return false;
+                try {
+                    const data = JSON.parse(session);
+                    if (data.expires && Date.now() < data.expires) {
+                        return true;
+                    }
+                    sessionStorage.removeItem(storageKey);
+                    return false;
+                } catch {
+                    return false;
+                }
+            }
+            
+            if (!isAuthenticated()) {
+                window.location.href = loginPage;
+            }
+        })();
+    </script>
 
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
@@ -30,7 +54,7 @@
          NAVEGAÇÃO
     ========================================= -->
     <nav class="nav">
-        <div class="nav-logo">VELOCITY ARENA</div>
+        <div class="nav-logo">NEOVELOX ARENA</div>
         <div class="nav-buttons">
             <button class="nav-btn active" data-section="hero">INÍCIO</button>
             <button class="nav-btn" data-section="conceito">CONCEITO</button>
@@ -63,7 +87,7 @@
     <section class="hero section" id="hero">
         <span class="hero-badge">APRESENTAÇÃO EXECUTIVA 2025</span>
         <h1 class="hero-title">
-            <span class="gradient">VELOCITY</span><br>ARENA
+            <span class="gradient">NEO</span>VELOX
         </h1>
         <p class="hero-subtitle">O FUTURO DO ENTRETENIMENTO AUTOMOTIVO</p>
         
@@ -100,7 +124,7 @@
             <span class="section-tag">01 — O PROJETO</span>
             <h2 class="section-title">CONCEITO DO EMPREENDIMENTO</h2>
             <p class="section-description">
-                A Velocity Arena é um complexo de entretenimento automotivo de alto padrão, projetado para atender desde entusiastas do automobilismo até pilotos profissionais em busca de treinamento avançado. Instalada em um pavilhão de grande porte, a arena combina tecnologia de ponta em simulação com experiências imersivas que redefinem o conceito de entretenimento no segmento.
+                A Neovelox Arena é um complexo de entretenimento automotivo de alto padrão, projetado para atender desde entusiastas do automobilismo até pilotos profissionais em busca de treinamento avançado. Instalada em um pavilhão de grande porte, a arena combina tecnologia de ponta em simulação com experiências imersivas que redefinem o conceito de entretenimento no segmento.
             </p>
         </div>
 
@@ -161,7 +185,7 @@
             <span class="section-tag">02 — VANTAGENS</span>
             <h2 class="section-title">DIFERENCIAIS COMPETITIVOS</h2>
             <p class="section-description">
-                A Velocity Arena se posiciona como referência absoluta no segmento, combinando elementos exclusivos que criam barreiras de entrada significativas para potenciais concorrentes.
+                A Neovelox se posiciona como referência absoluta no segmento, combinando elementos exclusivos que criam barreiras de entrada significativas para potenciais concorrentes.
             </p>
         </div>
 
@@ -224,7 +248,7 @@
             <span class="section-tag">03 — ESTRUTURA</span>
             <h2 class="section-title">ARENA DE SIMULADORES</h2>
             <p class="section-description">
-                O coração da Velocity Arena: 10 simuladores de corrida profissionais dispostos em arena circular, permitindo competições simultâneas com visibilidade total para o público espectador.
+                O coração da Neovelox Arena: 10 simuladores de corrida profissionais dispostos em arena circular, permitindo competições simultâneas com visibilidade total para o público espectador.
             </p>
         </div>
 
@@ -283,14 +307,14 @@
             <span class="section-tag">04 — CAMPEONATOS</span>
             <h2 class="section-title">COMPETIÇÕES E COPAS</h2>
             <p class="section-description">
-                Um calendário estruturado de competições que mantém o engajamento da comunidade durante todo o ano e posiciona a Velocity Arena como o principal hub de sim racing da região.
+                Um calendário estruturado de competições que mantém o engajamento da comunidade durante todo o ano e posiciona a Neovelox Arena como o principal hub de sim racing da região.
             </p>
         </div>
 
         <div class="cards-grid">
             <div class="card animate-on-scroll">
                 <div class="card-icon">🥇</div>
-                <h3 class="card-title">VELOCITY CUP</h3>
+                <h3 class="card-title">NEOVELOX CUP</h3>
                 <p class="card-text">
                     Campeonato principal da casa com temporada de 10 meses, divisões por nível de habilidade e grande final com premiação em dinheiro. Sistema de pontos, classificação e rebaixamento entre divisões.
                 </p>
@@ -314,7 +338,7 @@
 
             <div class="card animate-on-scroll">
                 <div class="card-icon">🌟</div>
-                <h3 class="card-title">VELOCITY MASTERS</h3>
+                <h3 class="card-title">LIGA NITRO NEOVELOX</h3>
                 <p class="card-text">
                     Evento anual que reúne os melhores pilotos da temporada em disputa eliminatória de fim de semana. Presença de pilotos profissionais convidados e maior premiação do calendário.
                 </p>
@@ -322,9 +346,9 @@
 
             <div class="card animate-on-scroll">
                 <div class="card-icon">🎮</div>
-                <h3 class="card-title">RC GRAND PRIX</h3>
+                <h3 class="card-title">CIRCUITOS RC</h3>
                 <p class="card-text">
-                    Campeonato dedicado aos carros de corrida em escala da pista externa. Categorias por tipo de veículo, corridas sprint e endurance, integração com fabricantes de RC.
+                    Pista externa com layouts intercambiáveis - o cliente escolhe entre réplicas de circuitos lendários: Interlagos, Mônaco, Spa-Francorchamps, Nürburgring e mais. Corridas sprint e endurance com carros RC de alta performance.
                 </p>
             </div>
 
@@ -342,7 +366,7 @@
             <div class="summary-grid">
                 <div class="summary-item">
                     <div class="summary-value orange">R$ 50K</div>
-                    <div class="summary-label">Premiação Velocity Cup</div>
+                    <div class="summary-label">Premiação Neovelox Cup</div>
                 </div>
                 <div class="summary-item">
                     <div class="summary-value orange">R$ 10K</div>
@@ -402,10 +426,10 @@
                     Além da experiência principal nos simuladores, o complexo oferece uma gama completa de serviços que estendem a permanência e aumentam o ticket médio.
                 </p>
                 <ul class="feature-list">
-                    <li><strong>Velocity Store:</strong> Loja especializada com equipamentos, vestuário e memorabilia</li>
+                    <li><strong>Neovelox Shop:</strong> Loja especializada com equipamentos, vestuário e memorabilia</li>
                     <li><strong>Pit Stop Bar:</strong> Ambiente temático com gastronomia, drinks e transmissão de corridas</li>
                     <li><strong>Lounge VIP:</strong> Espaço exclusivo para membros e eventos corporativos</li>
-                    <li><strong>Kids Zone:</strong> Área com simuladores adaptados e atividades para crianças</li>
+                    <li><strong>Mini Drivers:</strong> Área com simuladores adaptados e atividades para crianças</li>
                     <li><strong>Streaming Studio:</strong> Cabines equipadas para criadores de conteúdo</li>
                     <li><strong>Pro Shop:</strong> Serviços de setup e manutenção de equipamentos de sim racing</li>
                 </ul>
@@ -480,7 +504,7 @@
                     </div>
                 </div>
                 <div class="area-content">
-                    <h3 class="area-title">VELOCITY STORE</h3>
+                    <h3 class="area-title">NEOVELOX SHOP</h3>
                     <p class="area-description">
                         Loja especializada em equipamentos de sim racing, vestuário oficial das principais equipes, acessórios automotivos e produtos exclusivos da marca.
                     </p>
@@ -520,9 +544,9 @@
                     </div>
                 </div>
                 <div class="area-content">
-                    <h3 class="area-title">PISTA RC EXTERNA</h3>
+                    <h3 class="area-title">CIRCUITOS RC</h3>
                     <p class="area-description">
-                        Autódromo profissional para carros de corrida em escala (1:10 e 1:8), com traçado técnico de 400 metros, sistema de cronometragem e arquibancada coberta.
+                        Pista profissional com layouts intercambiáveis - réplicas de circuitos lendários como Interlagos, Mônaco, Spa e Nürburgring. O cliente escolhe onde quer correr. Sistema de cronometragem profissional e arquibancada coberta.
                     </p>
                     <div class="area-specs">
                         <span class="spec-tag">1.500 m²</span>
@@ -560,7 +584,7 @@
                     </div>
                 </div>
                 <div class="area-content">
-                    <h3 class="area-title">KIDS ZONE</h3>
+                    <h3 class="area-title">MINI DRIVERS</h3>
                     <p class="area-description">
                         Área dedicada ao público infantil com mini-simuladores adaptados, pista de kart a pedal, espaço para festas de aniversário e monitores especializados.
                     </p>
@@ -580,7 +604,7 @@
                     </div>
                 </div>
                 <div class="area-content">
-                    <h3 class="area-title">ÁREA TÉCNICA</h3>
+                    <h3 class="area-title">CONTROL TOWER</h3>
                     <p class="area-description">
                         Bastidores operacionais incluindo sala de controle, oficina de manutenção, almoxarifado, vestiários e central de TI com servidores dedicados.
                     </p>
@@ -845,7 +869,7 @@
 
             <div class="financial-card">
                 <div class="financial-card-header">
-                    <span class="financial-card-title">VELOCITY STORE</span>
+                    <span class="financial-card-title">NEOVELOX SHOP</span>
                     <span class="financial-card-total total-positive">R$ 100.000</span>
                 </div>
                 <div class="financial-item">
@@ -1058,7 +1082,7 @@
                 <div class="timeline-content">
                     <h4>OTIMIZAÇÃO E EXPANSÃO VERTICAL</h4>
                     <p>
-                        Refinamento da operação com base em dados do primeiro ano. Lançamento do programa de franquias, academia de pilotos online e expansão da linha de produtos da Velocity Store.
+                        Refinamento da operação com base em dados do primeiro ano. Lançamento do programa de franquias, academia de pilotos online e expansão da linha de produtos da Neovelox Shop.
                     </p>
                 </div>
             </div>
@@ -1118,7 +1142,7 @@
         </p>
         
         <div class="hero-cta">
-            <a href="mailto:contato@velocityarena.com.br" class="btn btn-primary">
+            <a href="/cdn-cgi/l/email-protection#e98a86879d889d86a99f8c85868a809d90889b8c8788c78a8684c78b9b" class="btn btn-primary">
                 FALAR COM A EQUIPE →
             </a>
             <button class="btn btn-outline" data-section="financeiro">
@@ -1147,15 +1171,85 @@
     ========================================= -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">VELOCITY ARENA</div>
+            <div class="footer-logo">NEOVELOX ARENA</div>
             <div class="footer-text">
                 Apresentação Executiva 2025 | Documento Confidencial
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Modular -->
-    <script src="js/navigation.js"></script>
-    <script src="js/animations.js"></script>
+    <!-- JavaScript Inline -->
+    <script>
+        /* Navigation */
+        const Navigation = {
+            config: { navOffset: 80, activeClass: 'active' },
+            
+            scrollToSection(sectionId) {
+                const element = document.getElementById(sectionId);
+                if (!element) return;
+                const offsetPosition = element.getBoundingClientRect().top + window.scrollY - this.config.navOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            },
+            
+            init() {
+                // Click handler para navegação
+                document.addEventListener('click', (e) => {
+                    const navBtn = e.target.closest('[data-section]');
+                    if (navBtn) {
+                        e.preventDefault();
+                        this.scrollToSection(navBtn.dataset.section);
+                        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                        navBtn.classList.add('active');
+                    }
+                });
+                
+                // Progress bar
+                const progressBar = document.getElementById('progressBar');
+                if (progressBar) {
+                    window.addEventListener('scroll', () => {
+                        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                        progressBar.style.width = scrolled + '%';
+                    }, { passive: true });
+                }
+                
+                // Active nav on scroll
+                const sections = document.querySelectorAll('section[id]');
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    sections.forEach(section => {
+                        if (window.scrollY >= section.offsetTop - 200) {
+                            current = section.id;
+                        }
+                    });
+                    document.querySelectorAll('.nav-btn[data-section]').forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.section === current);
+                    });
+                }, { passive: true });
+            }
+        };
+
+        /* Animations */
+        const Animations = {
+            init() {
+                const elements = document.querySelectorAll('.animate-on-scroll');
+                if (!elements.length || !('IntersectionObserver' in window)) {
+                    elements.forEach(el => el.classList.add('visible'));
+                    return;
+                }
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) entry.target.classList.add('visible');
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                elements.forEach(el => observer.observe(el));
+            }
+        };
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            Navigation.init();
+            Animations.init();
+        });
+    </script>
 </body>
 </html>

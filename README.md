@@ -1,9 +1,9 @@
-# VELOCITY ARENA - Apresentação Executiva
+# NEOVELOX - Apresentação Executiva
 
 ## 📁 Estrutura do Projeto
 
 ```
-velocity-arena/
+neovelox/
 ├── index.html              # Página de login/senha
 ├── apresentacao.html       # Apresentação principal (protegida)
 ├── README.md               # Este arquivo
@@ -31,21 +31,21 @@ velocity-arena/
 ### Senha Padrão
 A senha de acesso está configurada em `js/auth.js`:
 ```javascript
-password: 'velocity2025'
+password: 'neovelox2025'
 ```
 
 ### Alterar a Senha
 1. Abra o arquivo `js/auth.js`
-2. Localize a linha `password: 'velocity2025'`
-3. Substitua `'velocity2025'` pela nova senha
+2. Localize a linha `password: 'neovelox2025'`
+3. Substitua `'neovelox2025'` pela nova senha
 4. Salve o arquivo
 
 ### Configurações Disponíveis
 ```javascript
 config: {
-    password: 'velocity2025',           // Senha de acesso
+    password: 'neovelox2025',           // Senha de acesso
     redirectTo: 'apresentacao.html',    // Página após login
-    storageKey: 'velocity_auth',        // Chave do sessionStorage
+    storageKey: 'neovelox_auth',        // Chave do sessionStorage
     sessionDuration: 24 * 60 * 60 * 1000, // Duração da sessão (24h)
 }
 ```

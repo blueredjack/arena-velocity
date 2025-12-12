@@ -10,13 +10,13 @@ const Auth = {
     // ===========================
     config: {
         // Senha de acesso (pode ser alterada aqui)
-        password: 'velocity2025',
+        password: 'neovelox2025',
         
         // Página de destino após login
         redirectTo: 'apresentacao.html',
         
         // Chave do sessionStorage
-        storageKey: 'velocity_auth',
+        storageKey: 'neovelox_auth',
         
         // Tempo de sessão (em milissegundos) - 24 horas
         sessionDuration: 24 * 60 * 60 * 1000,

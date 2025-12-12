@@ -9,7 +9,7 @@ const AuthGuard = {
     // CONFIGURAÇÃO
     // ===========================
     config: {
-        storageKey: 'velocity_auth',
+        storageKey: 'neovelox_auth',
         loginPage: 'index.html'
     },
 
