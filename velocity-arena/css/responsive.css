@@ -1,0 +1,266 @@
+/* ==========================================
+   VELOCITY ARENA - RESPONSIVE
+   Arquivo: css/responsive.css
+   Descrição: Media queries e adaptações
+   ========================================== */
+
+/* =========================
+   TABLET (768px - 1024px)
+   ========================= */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 80px 5%;
+    }
+
+    /* Navegação */
+    .nav-buttons {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    /* Feature Blocks */
+    .feature-block {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .feature-block.reverse {
+        direction: ltr;
+    }
+
+    /* Hero */
+    .hero-stats {
+        gap: var(--space-xl);
+    }
+
+    /* Grids */
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .areas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* =========================
+   MOBILE (< 768px)
+   ========================= */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 60px 5%;
+    }
+
+    /* Tipografia */
+    .hero-title {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        letter-spacing: 4px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    /* Hero */
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .stat-value {
+        font-size: var(--text-3xl);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 var(--space-xl);
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Cards */
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: var(--space-lg);
+    }
+
+    /* Summary */
+    .summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .summary-value {
+        font-size: var(--text-3xl);
+    }
+
+    /* Areas */
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-image {
+        height: 200px;
+    }
+
+    /* Financial */
+    .financial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .financial-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+
+    /* Chart */
+    .chart-bars {
+        height: 150px;
+    }
+
+    /* Timeline */
+    .timeline {
+        padding-left: var(--space-xl);
+    }
+
+    .timeline-item::before {
+        left: calc(-1 * var(--space-xl));
+        width: 12px;
+        height: 12px;
+        transform: translateX(-5px);
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Botões */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: var(--text-sm);
+    }
+
+    /* Nav */
+    .nav {
+        padding: 0.8rem 1rem;
+    }
+
+    .nav-logo {
+        font-size: var(--text-lg);
+    }
+}
+
+/* =========================
+   MOBILE PEQUENO (< 480px)
+   ========================= */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 50px 4%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-specs {
+        justify-content: center;
+    }
+
+    .mobile-nav-btn {
+        gap: 0.3rem;
+    }
+
+    .mobile-nav-btn .nav-btn {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+/* =========================
+   DESKTOP GRANDE (> 1400px)
+   ========================= */
+@media (min-width: 1400px) {
+    .section {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .hero-stats {
+        gap: var(--space-4xl);
+    }
+}
+
+/* =========================
+   PREFERÊNCIA DE MOVIMENTO
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =========================
+   PRINT STYLES
+   ========================= */
+@media print {
+    .nav,
+    .mobile-nav,
+    .progress-bar {
+        display: none !important;
+    }
+
+    .section {
+        min-height: auto;
+        page-break-inside: avoid;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .hero {
+        background: white;
+    }
+
+    .card,
+    .financial-card,
+    .summary-box {
+        border: 1px solid #ccc;
+        background: white;
+    }
+}
