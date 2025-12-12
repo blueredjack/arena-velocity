@@ -391,22 +391,20 @@
 .feature-image {
     background: var(--dark-card);
     border: 1px solid var(--gray);
-    aspect-ratio: 16/10;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .feature-image::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: 
-        linear-gradient(45deg, var(--primary) 0%, transparent 50%),
-        linear-gradient(-45deg, var(--secondary) 0%, transparent 50%);
-    opacity: 0.1;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* =========================
